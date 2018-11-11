@@ -1,0 +1,1 @@
+{"version":3,"file":"get-file-path.js","sourceRoot":"","sources":["../source/get-file-path.ts"],"names":[],"mappings":";;;;;;;;;;AACA,mEAAiD;AAEjD,mBAA8B,EAAE,IAAI,EAAE,WAAW,EAAsB;;QACnE,MAAM,QAAQ,GAAG,MAAM,gCAAW,CAAC,WAAW,CAAC,CAAC;QAChD,MAAM,QAAQ,GAAG,QAAQ,CAAC,MAAM,EAAE,IAAI,WAAW,CAAC;QAElD,OAAO,QAAQ,CAAC;IACpB,CAAC;CAAA;AALD,4BAKC"}
