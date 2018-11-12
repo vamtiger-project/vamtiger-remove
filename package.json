@@ -1,6 +1,6 @@
 {
     "name": "vamtiger-remove",
-    "version": "0.0.3-0",
+    "version": "0.0.4-0",
     "description": "Remove a defined path.",
     "main": "build",
     "bin": {
