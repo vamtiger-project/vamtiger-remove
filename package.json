@@ -4,7 +4,7 @@
     "description": "Remove a defined path.",
     "main": "build",
     "bin": {
-        "vamtiger-remove": "build/bin"
+        "vamtiger-remove": "build/bin.js"
     },
     "scripts": {
         "help": "node build/bin --help",
