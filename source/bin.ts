@@ -1,12 +1,13 @@
 import { resolve as resolvePath, resolve } from 'path';
 import Args from 'vamtiger-argv/build/main';
 import getHelp from 'vamtiger-commandline-help';
-import remove, {
+import {
     CommandlineArg,
     ShortCommandlineArgs,
     CommandlineDescription
 } from '.';
 
+const remove = require('.').default;
 const workingDirectory = process.cwd();
 const args = new Args();
 const currentFiles = (args.has(CommandlineArg.file) && args.getAll(CommandlineArg.file)

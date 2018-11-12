@@ -27,11 +27,11 @@ vamtiger-remove --help
 ```
 | Argument       | Short | Description                    |
 |----------------|-------|--------------------------------|
-| exclude        | e     | File/Folder to exclude         |
-| excludePattern | p     | File/Folder pattern to exclude |
-| file           | f     | File to remove                 |
-| folder         | d     | Folder to remove               |
-| help           | h     | List help options              |
+| --exclude        | -e     | File/Folder to exclude         |
+| --excludePattern | -p     | File/Folder pattern to exclude |
+| --file           | -f     | File to remove                 |
+| --folder         | -d     | Folder to remove               |
+| --help           | -h     | List help options              |
 
 [VAMTIGER Node Typescript Commit](https://github.com/vamtiger-project/vamtiger-remove) can be referenced as an [npm](https://www.npmjs.com/) and can be used to remove files.
 ```json
