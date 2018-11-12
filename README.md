@@ -4,7 +4,7 @@ Remove files/folders and place trash folder for respective operating system.
 ## Installation
 [VAMTIGER Remove](https://github.com/vamtiger-project/vamtiger-remove) can be installed using [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/en/):
 ```bash
-npm i --save vamtiger-remove
+npm i vamtiger-remove
 ```
 or
 ```bash
