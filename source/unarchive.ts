@@ -14,11 +14,15 @@ export default async function ({ archiveFolder, unarchivedFolder }: IUnArchive['
         source: currentArchivedFile,
         destination: currentArchivedFile.replace(archiveFolder, unarchivedFolder)
     }));
-    const unarchivedFolders = unarchivedFoldersPaths.reduce((unarchive, currentPath) => unarchive.then(() => createFolder({
-        path: currentPath
-    })), Promise.resolve());
+    const unarchivedFolders = unarchivedFoldersPaths.length && unarchivedFoldersPaths.reduce((unarchive, currentPath) => unarchive.then(() => createFolder({
+            path: currentPath
+        })), Promise.resolve())
+        ||
+        createFolder({
+            path: unarchivedFolder
+        });
 
-    await unarchivedFolders
+    await unarchivedFolders;
 
     await Promise.all(copyFilePaths.map(copyFile));
 }

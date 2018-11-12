@@ -11,6 +11,7 @@ import { RemoveFolder } from '.';
 export default async function ({ path: folderPath, exclude, excludePattern = '' }: RemoveFolder.Params) {
     const excludePatterns = (exclude && typeof exclude === 'string' && [exclude] || exclude || []) as string[];
     const patterns = excludePatterns
+        .map(pattern => `^${resolvePath(folderPath, pattern)}$`)
         .concat([excludePattern])
         .filter(pattern => pattern) as string[];
     const excludeRegex = patterns.map(pattern => new RegExp(pattern));

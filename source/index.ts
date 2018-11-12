@@ -1,6 +1,7 @@
 import { promisify } from 'util';
 import { unlink, rmdir, PathLike } from 'fs';
 import { ClassifiedDirectoryContent } from 'vamtiger-get-directory-content-recursive/build/directory-content';
+import remove from './remove';
 
 export type DirectoryContent = {
     [K in keyof ClassifiedDirectoryContent]?: ClassifiedDirectoryContent[K];
@@ -135,10 +136,4 @@ export interface IRemoveFolderPath {
     }
 }
 
-export const removeFile = promisify(unlink);
-
-export const removeFolder = promisify(rmdir);
-
-export { default as remove} from './remove';
-
-export default exports.remove;
+export default remove;
