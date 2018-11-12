@@ -1,0 +1,67 @@
+{
+    "name": "vamtiger-remove",
+    "version": "0.0.2-0",
+    "description": "Remove a defined path.",
+    "main": "build",
+    "bin": {
+        "vamtiger-remove": "build/bin"
+    },
+    "scripts": {
+        "help": "node build/bin --help",
+        "test": "npm run build && npm run mocha",
+        "mocha": "mocha build/test --recursive --timeout 10000",
+        "clean": "rm -rf build/*",
+        "clean-bundle": "node build/bin --folder build --excludePattern \"(index|bin)\\.(js(\\.map)?|d\\.ts)\"",
+        "build": "npm run clean && tsc",
+        "build-bin": "tsc --project tsconfig-bin.json",
+        "test-build": "tsc",
+        "build-types": "npm run clean && tsc --project tsconfig-declaration.json",
+        "test-build-types": "tsc --project tsconfig-declaration.json",
+        "commit": "npm run bundle && vamtiger-node-typescript-commit --push --publish --buildScript bundle",
+        "bundle": "npm test && npm run clean; npm run build-types && npm run bundle-bin && npm run bundle-source && npm run clean-bundle",
+        "bundle-source": "vamtiger-bundle-typescript --relativePath --entryFilePath source/index.ts --bundleFilePath build/index.js --format cjs --sourcemap true --copySourceMap --minify",
+        "bundle-bin": "vamtiger-bundle-typescript --relativePath --entryFilePath source/bin.ts --bundleFilePath build/bin.js --format cjs --sourcemap true --copySourceMap --minify --bin",
+        "test-bundle": "npm run test-build && npm run test-build-types && npm run bundle-source",
+        "watch": "npm run clean && npm run build-types && npm run bundle-source -- --watch",
+        "test-watch": "npm run test-build && npm run test-build-types && npm run bundle-source -- --watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vamtiger-project/vamtiger-remove.git"
+    },
+    "keywords": [
+        "vamtiger",
+        "remove"
+    ],
+    "author": "Vamtiger Immortalles",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/vamtiger-project/vamtiger-remove/issues"
+    },
+    "homepage": "https://github.com/vamtiger-project/vamtiger-remove#readme",
+    "types": "build/index.d.ts",
+    "devDependencies": {
+        "@types/chai": "^4.1.6",
+        "@types/mocha": "^5.2.5",
+        "@types/node": "^10.11.3",
+        "@types/trash": "^4.3.0",
+        "chai": "^4.2.0",
+        "mocha": "^5.2.0",
+        "typescript": "^3.1.1",
+        "vamtiger-bash": "0.0.25",
+        "vamtiger-bundle-typescript": "0.0.27",
+        "vamtiger-create-directory": "0.0.5",
+        "vamtiger-create-file": "0.0.10",
+        "vamtiger-node-typescript-commit": "0.0.65"
+    },
+    "dependencies": {
+        "trash": "^4.3.0",
+        "vamtiger-argv": "^1.2.6",
+        "vamtiger-commandline-help": "0.0.4",
+        "vamtiger-copy-file": "0.0.9",
+        "vamtiger-create-directory-recursive": "0.0.3",
+        "vamtiger-get-directory-content": "0.0.35",
+        "vamtiger-get-directory-content-recursive": "0.0.9",
+        "vamtiger-get-path-data": "0.0.2"
+    }
+}
